@@ -1,0 +1,6 @@
+- css external files: animate.css, bootstrap.min.css, flexslider.css, queries.css, style.css
+- js external files: bootstrap.min.js, jquery-1.11.1.min.js, jquery.flexslider.js, modernizr.js, scripts.js, waypoints.min.js
+- AngularJS MVC is being demonstrated:
+    -- invoice.js is the "model" which is just a JavaScript object
+    -- the controller is defined in index.html
+    -- using Angular, the display & calculation is updated automatically based on changes to the model
