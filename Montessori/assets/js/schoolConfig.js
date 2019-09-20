@@ -1,10 +1,5 @@
 $( document ).ready(function() {  
 	applySchoolConfig();
-	   $( "#datepicker" ).datepicker();
-});
-
-$( window ).resize(function() {
-	//applySchoolConfig();
 });
 
 function applySchoolConfig() {

@@ -59,24 +59,19 @@
 					<div class="container">
 						<div class="row gtr-200">
 							<div class="col-8 col-12-narrower">
-								<div id="content">
+								<div id="news-articles">
 
 									<!-- Content -->
 
-										<article>
+										<!--<article>
 											<header>
-												<h2>Right Sidebar</h2>
-												<p>Sidebar on the right, content on the left.</p>
+												<h2>News</h2>
 											</header>
 
 											<span class="image featured"><img src="images/banner.jpg" alt="" /></span>
 
-											<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus.
-											Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat.
-											Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi
-											consequat etiam lorem ipsum dolor sit amet nullam.</p>
-
 											<h3>And Yet Another Subheading</h3>
+											<h4>date</h4>
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac quam risus, at tempus
 											justo. Sed dictum rutrum massa eu volutpat. Quisque vitae hendrerit sem. Pellentesque lorem felis,
 											ultricies a bibendum id, bibendum sit amet nisl. Mauris et lorem quam. Maecenas rutrum imperdiet
@@ -86,13 +81,7 @@
 											Donec sagittis massa et leo semper a scelerisque metus faucibus. Morbi congue mattis mi.
 											Phasellus sed nisl vitae risus tristique volutpat. Cras rutrum commodo luctus.</p>
 
-											<p>Phasellus odio risus, faucibus et viverra vitae, eleifend ac purus. Praesent mattis, enim
-											quis hendrerit porttitor, sapien tortor viverra magna, sit amet rhoncus nisl lacus nec arcu.
-											Suspendisse laoreet metus ut metus imperdiet interdum aliquam justo tincidunt. Mauris dolor urna,
-											fringilla vel malesuada ac, dignissim eu mi. Praesent mollis massa ac nulla pretium pretium.
-											Maecenas tortor mauris, consectetur pellentesque dapibus eget, tincidunt vitae arcu.
-											Vestibulum purus augue, tincidunt sit amet iaculis id, porta eu purus.</p>
-										</article>
+										</article>-->
 
 								</div>
 							</div>
@@ -100,8 +89,7 @@
 								<div id="sidebar">
 								
 															<section class="col-6 col-12-narrower">
-								<h3>Admissions Information</h3>
-								<form>
+								<h3>Create New Article</h3>
 									<div class="row gtr-50">
 										<div class="col-6 col-12-mobilep">
 											<p>Date: <input type="text" id="datepicker"></p>
@@ -109,83 +97,28 @@
 										<div class="col-6 col-12-mobilep">
 											<input style="display: none;" type="text" name="lname" id="lname" placeholder="Last Name" />
 										</div>
-										<div class="col-6 col-12-mobilep">
-											<input type="text" name="bdate" id="bdate" placeholder="Birth Date" />
-										</div>
-										<div class="col-6 col-12-mobilep">
-											<input type="text" name="sex" id="sex" placeholder="Sex" />
+										<div class="col-12 col-12-mobilep">
+											<input type="text" name="news-title" id="news-title" placeholder="Title" />
 										</div>
 										<div class="col-12">
-											<textarea name="address" id="address" placeholder="Home address" rows="2"></textarea>
-										</div>
-										<div class="col-6 col-12-mobilep">
-											<input type="text" name="pname" id="pname" placeholder="Parent/Guardian Name" />
-										</div>
-										<div class="col-6 col-12-mobilep">
-											<input type="email" name="email" id="email" placeholder="Email" />
-										</div>
-										<div class="col-6 col-12-mobilep">
-											<input type="text" name="phone" id="phone" placeholder="Phone" />
-										</div>
-										<div class="col-6 col-12-mobilep">
-											<input type="text" name="hear" id="hear" placeholder="How did you hear about us?" />
-										</div>
-										<div class="col-6 col-12-mobilep">
-											<input type="text" name="referral" id="referral" placeholder="If Refferal, by whom?" />
-										</div>
-										<div class="col-6 col-12-mobilep">
-											<input type="text" name="other" id="other" placeholder="Other? Please specify" />
-										</div>
-										<div class="col-12">
-											<textarea name="message" id="message" placeholder="(If Applicable) Which school is your child currently attending? Why are you looking to transfer?
-
-" rows="5"></textarea>
-										</div>
-										<div class="col-12">
-											<textarea name="message" id="message" placeholder="What are the most important factors influencing your decision as to whether to enroll your child?
-" rows="5"></textarea>
+											<textarea name="content" id="content" placeholder="Content" rows="5"></textarea>
 										</div>
 										<div class="col-12">
 											<ul class="actions">
-												<li><input type="submit" class="button alt" value="Submit" /></li>
+												<li><input id="add-article" type="submit" class="button alt" value="Submit" /></li>
+												<li><input id="authorize_button" type="submit" class="button alt" value="Authorize"></li>
+											<li><input id="signout_button" type="submit" class="button alt" value="Sign Out"></li>
 											</ul>
-											<a href="documents/immunization-form.pdf" download>Immunization Form</a>
 										</div>
 									</div>
-								</form>
 							</section>
 
 									<!-- Sidebar -->
 
-										<section>
-											<h3>Create New Article</h3>
-										
-											<div class="row gtr-50">
-											<div class="col-6 col-12-mobilep">
-												
-											</div>
-											<div class="col-6 col-12-mobilep">
-												<input type="text" name="title" id="title" placeholder="Title" />
-											</div>
-											<div class="col-12">
-												<textarea name="message" id="message" placeholder="News article content" rows="5"></textarea>
-										</div>
-											</div>
-										
-											<footer>
-												<a href="#" class="button">Add New Article</a>
-											</footer>
-										</section>
 
 										<section>
-											<h3>Another Subheading</h3>
-											<ul class="links">
-												<li><a href="#">Amet turpis, feugiat et sit amet</a></li>
-												<li><a href="#">Ornare in hendrerit in lectus</a></li>
-												<li><a href="#">Semper mod quis eget mi dolore</a></li>
-												<li><a href="#">Consequat etiam lorem phasellus</a></li>
-												<li><a href="#">Amet turpis, feugiat et sit amet</a></li>
-												<li><a href="#">Semper mod quisturpis nisi</a></li>
+											<h3>Archive</h3>
+											<ul id="archives" class="links">
 											</ul>
 											<footer>
 												<a href="#" class="button">More Random Links</a>
@@ -269,17 +202,24 @@
 				</div>
 
 		</div>
-
-		<!-- Scripts -->
+	
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
+			<script src="assets/js/newsEditor.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/schoolConfig.js"></script>
+			<script src="assets/js/googleDriveApi.js"></script>
 			  <link rel="stylesheet" href="assets/css/jquery-ui.css">
 			<script src="assets/js/jquery-1.12.4.js"></script>
 			<script src="assets/js/jquery-ui.js"></script>
+			
+			<!-- Scripts -->
+		<script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
 	</body>
 </html>
