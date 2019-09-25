@@ -11,9 +11,9 @@ $( "#add-article" ).click(function() {
 });
 
 $( document ).ready(function() {
-	var clientSecret = "UH2YL_twFmmbqSybeaOsQaNW";
-	var clientId = "233929041463-sk7hss8jq03d5d8aki150gbd4c3anjuf.apps.googleusercontent.com";
-	var apiKey = "AIzaSyAIGQ7JXXVq9N3riU4tGFVwWvIVPiLIJu8";
+	var clientSecret = "Uxs6ououVFzeFqC-XlNsAooq";
+	var clientId = "1047516465851-fsjve73h82ao14ltfiers341r3jcj9d3.apps.googleusercontent.com";
+	var apiKey = "AIzaSyBYLJAEhccZGoLSoCwP40ohSlPP6ikyMuc";
 	$( "#datepicker" ).datepicker();
 });
 
