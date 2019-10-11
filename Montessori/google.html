@@ -1,19 +1,3 @@
-<!--
-Copyright 2018 Google LLC
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    https://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
--->
-<!-- [START drive_quickstart] -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -31,15 +15,16 @@ limitations under the License.
 
     <script type="text/javascript">
       // Client ID and API key from the Developer Console
-      var CLIENT_ID = '1047516465851-fsjve73h82ao14ltfiers341r3jcj9d3.apps.googleusercontent.com';
-      var API_KEY = 'AIzaSyBYLJAEhccZGoLSoCwP40ohSlPP6ikyMuc';
+      var API_KEY = "AIzaSyCvwlFdEMnmhl5oQm-OMVslu3VtaD_rYgk";
+var CLIENT_ID = "233929041463-69ikr39lc5a9b7jkj2v9vkb6223kv9m2.apps.googleusercontent.com";
+var CLIENT_SECRET = "53OvzKjaT6j9WALuG2DDa4vX";
 
       // Array of API discovery doc URLs for APIs used by the quickstart
       var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"];
 
       // Authorization scopes required by the API; multiple scopes can be
       // included, separated by spaces.
-      var SCOPES = 'https://www.googleapis.com/auth/drive.metadata.readonly';
+      var SCOPES = 'https://www.googleapis.com/auth/drive.metadata.readonly https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file';
 
       var authorizeButton = document.getElementById('authorize_button');
       var signoutButton = document.getElementById('signout_button');
@@ -115,15 +100,15 @@ limitations under the License.
         pre.appendChild(textContent);
       }
 
-      /**
-       * Print files.
-       */
-      function listFiles() {
+     function listFiles() {
+		
+			  console.log("list folders...");
         gapi.client.drive.files.list({
           'pageSize': 10,
+		  'q': "mimeType = 'application/vnd.google-apps.folder' and trashed = false",
           'fields': "nextPageToken, files(id, name)"
         }).then(function(response) {
-          appendPre('Files:');
+          appendPre('Folders:');
           var files = response.result.files;
           if (files && files.length > 0) {
             for (var i = 0; i < files.length; i++) {
@@ -134,6 +119,84 @@ limitations under the License.
             appendPre('No files found.');
           }
         });
+		
+		console.log("get file...");
+		gapi.client.drive.files.get({
+          'fileId': "12gQMUqWRc3twy6KNd9Cl8t19pS3nZrQo",
+        }).then(function(response) {
+          appendPre('Files:');
+		  appendPre(response.result.name);
+        });
+		
+		
+		var parentId = "1-0PK3OVb_DwzB8JPcX-ChMtovL8Wx2yW";//some parentId of a folder under which to create the new folder
+var fileMetadata = {
+  'name' : 'New Folder',
+  'mimeType' : 'application/vnd.google-apps.folder',
+  'parents': parentId
+};
+gapi.client.drive.files.create({
+  resource: fileMetadata,
+}).then(function(response) {
+  switch(response.status){
+    case 200:
+      var file = response.result;
+      console.log('Created Folder Id: ', file.id);
+      break;
+    default:
+      console.log('Error creating the folder, '+response);
+      break;
+    }
+});
+
+// create new file
+
+// Creates file itself
+
+var folderId = "1-0PK3OVb_DwzB8JPcX-ChMtovL8Wx2yW";
+create(folderId);
+
+function create(folderId) {
+  var fileMetadata = {
+    'mimeType': 'application/vnd.google-apps.document',
+    'name': 'mrHanky'
+  }
+  var media = {
+    mimeType: 'application/vnd.google-apps.document',
+    body: 'Haidee hooowwww i am mr. Hanky!'
+  }
+  gapi.client.drive.files.create({
+    name: 'test_mr_hanky.doc',
+	mimeType: 'application/vnd.google-apps.document', //add the mimeType property
+    parents: folderId,
+    resource: fileMetadata,
+    media: media,
+    params: {
+      uploadType: 'media'
+    },
+    body: 'Haidee hooowwww mr. Hanky!',
+    fields: 'id'
+  }).then(function(result) {
+    console.log('File create: ', result)
+    save(result.result.id).then(function(result) {
+      console.log('File update', result)
+    })
+  })
+}
+
+// Adds content. Perhaps not correct using of sdk, but somehow it half-works
+function save(fileId) {
+  return gapi.client
+    .request({
+      path: '/upload/drive/v3/files/' + fileId,
+      method: 'PATCH',
+      params: {
+        uploadType: 'media'
+      },
+      body: 'mr Hanky after save!'
+    })
+}
+
       }
 
     </script>
@@ -144,4 +207,3 @@ limitations under the License.
     </script>
   </body>
 </html>
-<!-- [END drive_quickstart] -->

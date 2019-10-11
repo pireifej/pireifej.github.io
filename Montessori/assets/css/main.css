@@ -2756,6 +2756,42 @@ input, select, textarea {
 				.wrapper.style3 .button:hover {
 					color: #37c0fb !important;
 				}
+				
+				/* Wrapper small */
+
+	.wrappersmall {
+		padding: 3em 0 5em 0;
+	}
+
+		.wrappersmall.style1 {
+			background: #fff;
+		}
+
+		.wrappersmall.style2 {
+			background-color: #fff;
+			background-image: url("images/bg02.png"), url("images/bg03.png"), url("images/bg01.png");
+			background-position: top left,						bottom left,					top left;
+			background-size: 100% 6em,						100% 6em,						auto;
+			background-repeat: no-repeat,						no-repeat,						repeat;
+		}
+
+		.wrappersmall.style3 {
+			background-color: #37c0fb;
+			background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url("images/bg01.png");
+			background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url("images/bg01.png");
+			background-image: -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url("images/bg01.png");
+			background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url("images/bg01.png");
+			color: #fff;
+		}
+
+			.wrappersmall.style3 .button {
+				background: #fff;
+				color: #474747;
+			}
+
+				.wrappersmall.style3 .button:hover {
+					color: #37c0fb !important;
+				}
 
 /* CTA */
 
@@ -2771,6 +2807,24 @@ input, select, textarea {
 		}
 
 		#cta header .button {
+			vertical-align: middle;
+			margin-left: 1em;
+		}
+		
+		/* CTA smaller */
+
+	#ctas {
+		text-align: center;
+		padding: 1em 0;
+	}
+
+		#ctas header h2 {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0;
+		}
+
+		#ctas header .button {
 			vertical-align: middle;
 			margin-left: 1em;
 		}
