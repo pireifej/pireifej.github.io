@@ -1,6 +1,9 @@
-var API_KEY = "AIzaSyCvwlFdEMnmhl5oQm-OMVslu3VtaD_rYgk";
-var CLIENT_ID = "233929041463-69ikr39lc5a9b7jkj2v9vkb6223kv9m2.apps.googleusercontent.com";
-var CLIENT_SECRET = "53OvzKjaT6j9WALuG2DDa4vX";
+//var API_KEY = "AIzaSyCvwlFdEMnmhl5oQm-OMVslu3VtaD_rYgk";
+var API_KEY = "AIzaSyBYLJAEhccZGoLSoCwP40ohSlPP6ikyMuc";
+//var CLIENT_ID = "233929041463-69ikr39lc5a9b7jkj2v9vkb6223kv9m2.apps.googleusercontent.com";
+var CLIENT_ID = "1047516465851-fsjve73h82ao14ltfiers341r3jcj9d3.apps.googleusercontent.com";
+//var CLIENT_SECRET = "53OvzKjaT6j9WALuG2DDa4vX";
+var CLIENT_SECRET = "Uxs6ououVFzeFqC-XlNsAooq";
 
 // Array of API discovery doc URLs for APIs used by the quickstart
 var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"];
