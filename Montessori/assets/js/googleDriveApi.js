@@ -113,6 +113,7 @@ var fileMetadata = {
     fields: 'id'
   }).then(function(result) {
     console.log('File create: ', result);
+	console.log(content);
     save(result.result.id, NEWS_FOLDER_ID, content).then(function(result) {
       console.log('File update', result)
 	  
@@ -166,6 +167,7 @@ function listFiles() {
 				if (newsFolderExists) {
 					console.log("News folder exists already with ID " + folder.id);
 					NEWS_FOLDER_ID = folder.id;
+					listAllFilesInFolder(NEWS_FOLDER_ID);
 					break;
 				}
 			}
@@ -231,31 +233,29 @@ function listFolders(callback) {
 }
 
 function listAllFilesInFolder(folderId) {
-	  // list files under News folder
-	  var body = {};
+	// list files under News folder
+	var body = {};
 	body.parents = [{ 'id': folderId }];
 	var request = gapi.client.request({
-  'path': 'drive/v2/files/'+folderId + "/children",
-  'method': 'GET',
-  'body': body
-});
+		'path': 'drive/v2/files/'+folderId + "/children",
+		'method': 'GET',
+		'body': body
+	});
 
-request.execute(function(resp) { 
-	console.log("folder contains files ...");
-	filesLength = resp.items.length;
-	for (var i = 0; i < resp.items.length; i++) {
-		var item = resp.items[i];
-		console.log(item.id);
-		getFile(item.id, addFileToArray);
-	}
+	request.execute(function(resp) { 
+		console.log("Folder contains files ...");
+		filesLength = resp.items.length;
+		for (var i = 0; i < resp.items.length; i++) {
+			var item = resp.items[i];
+			console.log(item.id);
+			getFile(item.id, addFileToArray);
+		}
 	});
 }
 
 function addFileToArray(file) {
 	var newFile = JSON.parse(file.body);
-	files.push(newFile);	
-console.log(files.length);
-console.log(filesLength);
+	files.push(newFile);
 	if (files.length == filesLength) {
 		displayNewsArticles(files);
 	}

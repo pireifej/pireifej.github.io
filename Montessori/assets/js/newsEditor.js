@@ -1,5 +1,3 @@
-
-
 $( document ).ready(function() {
 	$( "#datepicker" ).datepicker();
 });
@@ -30,7 +28,16 @@ function displayNewsArticles(files) {
 	var newsArticles = [];
 	for (var i = 0; i < files.length; i++) {
 		var file = files[i];
-		console.log(file);
+		var content = file.body.content;
+		var date = content[1].paragraph.elements[0].textRun.content;
+		var title = content[2].paragraph.elements[0].textRun.content;
+		
+		var line = "";
+		for (var j = 3; j < content.length; j++) {
+			line += content[j].paragraph.elements[0].textRun.content + "<br>";
+		}
+		console.log(line);
+		addNewArticle(date, title, line);
 	}
 }
 
