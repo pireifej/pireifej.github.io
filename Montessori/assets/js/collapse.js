@@ -10,60 +10,70 @@ $( document ).ready(function() {
 	var google = "Google Founders Talk Montessori";
 	var madness = "Montessori Madness From A Parent’s Perspective";
 	
+	var readmore = "<span class='glyphicon glyphicon-collapse-down'></span> Read more </em>"
+	var readless = "<span class='glyphicon glyphicon-collapse-up'></span> Read less </em>"
+	
 	$("#infant").on("hide.bs.collapse", function() {
-		$("#infant-btn").html('<span class="glyphicon glyphicon-collapse-down"></span> ' + infant + '</em>');
+		$("#infant-btn").html(readmore);
 	});
 	$("#infant").on("show.bs.collapse", function() {
-		$("#infant-btn").html('<span class="glyphicon glyphicon-collapse-up"></span> ' + infant + '</em>');
+		$("#infant-btn").html(readless);
 	});	
 	
 	$("#toddler").on("hide.bs.collapse", function() {
-		$("#toddler-btn").html('<span class="glyphicon glyphicon-collapse-down"></span> ' + toddler + '</em>');
+		$("#toddler-btn").html(readmore);
 	});
 	$("#toddler").on("show.bs.collapse", function() {
-		$("#toddler-btn").html('<span class="glyphicon glyphicon-collapse-up"></span> ' + toddler + '</em>');
+		$("#toddler-btn").html(readless);
 	});	
 	
 	$("#primary").on("hide.bs.collapse", function() {
-		$("#primary-btn").html('<span class="glyphicon glyphicon-collapse-down"></span> ' + primary + '</em>');
+		$("#primary-btn").html(readmore);
 	});
 	$("#primary").on("show.bs.collapse", function() {
-		$("#primary-btn").html('<span class="glyphicon glyphicon-collapse-up"></span> ' + primary + '</em>');
+		$("#primary-btn").html(readless);
 	});	
 	
 	$("#summer").on("hide.bs.collapse", function() {
-		$("#summer-btn").html('<span class="glyphicon glyphicon-collapse-down"></span> ' + summer + '</em>');
+		$("#summer-btn").html(readmore);
 	});
 	$("#summer").on("show.bs.collapse", function() {
-		$("#summer-btn").html('<span class="glyphicon glyphicon-collapse-up"></span> ' + summer + '</em>');
+		$("#summer-btn").html(readless);
 	});	
 	
 	$("#enrichment").on("hide.bs.collapse", function() {
-		$("#enrichment-btn").html('<span class="glyphicon glyphicon-collapse-down"></span> ' + enrichment + '</em>');
+		$("#enrichment-btn").html(readmore);
 	});
 	$("#enrichment").on("show.bs.collapse", function() {
-		$("#enrichment-btn").html('<span class="glyphicon glyphicon-collapse-up"></span> ' + enrichment + '</em>');
+		$("#enrichment-btn").html(readless);
 	});	
 	
 	$("#after").on("hide.bs.collapse", function() {
-		$("#after-btn").html('<span class="glyphicon glyphicon-collapse-down"></span> ' + after + '</em>');
+		$("#after-btn").html(readmore);
 	});
 	$("#after").on("show.bs.collapse", function() {
-		$("#after-btn").html('<span class="glyphicon glyphicon-collapse-up"></span> ' + after + '</em>');
+		$("#after-btn").html(readless);
 	});	
 	
 	$("#why").on("hide.bs.collapse", function() {
-		$("#why-btn").html('<span class="glyphicon glyphicon-collapse-down"></span> ' + why + '</em>');
+		$("#why-btn").html(readmore);
 	});
 	$("#why").on("show.bs.collapse", function() {
-		$("#why-btn").html('<span class="glyphicon glyphicon-collapse-up"></span> ' + why + '</em>');
+		$("#why-btn").html(readless);
 	});	
 	
 	$("#impact").on("hide.bs.collapse", function() {
-		$("#impact-btn").html('<span class="glyphicon glyphicon-collapse-down"></span> ' + impact + '</em>');
+		$("#impact-btn").html(readmore);
 	});
 	$("#impact").on("show.bs.collapse", function() {
-		$("#impact-btn").html('<span class="glyphicon glyphicon-collapse-up"></span> ' + impact + '</em>');
+		$("#impact-btn").html(readless);
+	});
+	
+	$("#google").on("hide.bs.collapse", function() {
+		$("#google-btn").html(readmore);
+	});
+	$("#google").on("show.bs.collapse", function() {
+		$("#google-btn").html(readless);
 	});
 	
 	$("#madness").on("hide.bs.collapse", function() {
