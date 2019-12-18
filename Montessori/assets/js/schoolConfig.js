@@ -3,8 +3,12 @@ $( document ).ready(function() {
 });
 
 function applySchoolConfig() {
+	var url = window.location.href;
 	var mySchool = "d";
 	var schoolName = "";
+	
+	if (url.includes("manalapanmontessori")) mySchool = "m";
+	if (url.includes("holmdelmontessorischool")) mySchool = "h";
 	
 	// Default
 	if (mySchool == "d") {
