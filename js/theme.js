@@ -3,6 +3,7 @@
 	
 	
 	var nav_offset_top = $('header').height() + 50; 
+	var my_document = document;
     /*-------------------------------------------------------------------------------
 	  Navbar 
 	-------------------------------------------------------------------------------*/
@@ -149,8 +150,11 @@
             $(".gallery_filter li").on('click',function(){
                 $(".gallery_filter li").removeClass("active");
                 $(this).addClass("active");
+				console.log($(this));
 
                 var selector = $(this).attr("data-filter");
+				document.cookie = "filter=" + selector;
+				
                 $(".gallery_f_inner").isotope({
                     filter: selector,
                     animationOptions: {
@@ -161,6 +165,25 @@
                 });
                 return false;
             });
+			
+			var filterCookies = document.cookie.split(";");
+			var filter = "";
+			for (var i = 0; i < filterCookies.length; i++) {
+				var cookieValue = filterCookies[i].split("=");
+				console.log(cookieValue.length);
+				if (!cookieValue[0]) return;
+				var key = cookieValue[0].trim();
+				var value = cookieValue[1].trim();
+				if (key == "filter") {
+					filter = value;
+				}
+			}
+				
+			$(".gallery_filter li").each(function() {
+				if ($(this).data("filter") == filter) {
+					$(this).trigger("click");
+				}
+			});
         }
     }
     gallery_isotope();
