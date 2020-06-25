@@ -40,13 +40,34 @@
 								<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
 								<!--<li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li> 
 								<li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>-->
+
 								<li class="nav-item submenu dropdown">
-									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CFCA</a>
+									<!-- CFCA menu link -->
+									<a id="cfca-menu-link" href="#gallery" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CFCA</a>
 									<ul class="dropdown-menu">
 										<li class="nav-item"><a class="nav-link" href="chicago.html">Chicago</a></li>
 										<li class="nav-item"><a class="nav-link" href="tucson.html">Tucson</a></li>
 									</ul>
-								</li> 
+								</li>
+								
+								<!-- Projects menu link -->
+								<li id="projects-menu-link" class="nav-item"><a class="nav-link" href="#gallery">Projects</a></li>
+								
+								<!-- Patents menu link -->
+								<li href="#gallery" class="nav-item submenu dropdown">
+									<a id="patents-menu-link" href="#gallery" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Patents</a>
+									<ul class="dropdown-menu">
+										<li class="nav-item"><a class="nav-link" href="https://patents.justia.com/patent/20200112905">Routing Optimization</a></li>
+										<li class="nav-item"><a class="nav-link" href="https://patents.google.com/patent/US20170329620A1/en">Scripting Languages</a></li>
+									</ul>
+								</li>
+
+								<!-- Contests menu link -->
+								<li id="contests-menu-link" class="nav-item"><a class="nav-link" href="#gallery">Contests</a></li>
+
+								<!-- Hackathon menu link -->
+								<li id="hackathon-menu-link" class="nav-item"><a class="nav-link" href="#gallery">Hackathon</a></li>								
+
 								<!--<li class="nav-item submenu dropdown">
 									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
 									<ul class="dropdown-menu">
@@ -86,10 +107,10 @@
 										<li><a href="docs/Paul Ireifej - Software Engineer (new).doc"><i class="fa fa-thumb-tack"></i> Download Resume</a></li>
 									</ul>
 									<ul class="list personal_social">
-										<li><a href="https://m.facebook.com/profile.php?id=17501182&ref=content_filter"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="https://mobile.twitter.com/paulireifej"><i class="fa fa-twitter"></i></a></li>
-										<li><a href="https://linkedin.com/in/paul-ireifej-572829b"><i class="fa fa-linkedin"></i></a></li>
-										<li><a href="https://www.instagram.com/ipaullllllll/"><i class="fa fa-instagram"></i></a></li>
+										<li><a id="facebook" href=""><i class="fa fa-facebook"></i></a></li>
+										<li><a id="twitter" href=""><i class="fa fa-twitter"></i></a></li>
+										<li><a id="linkedin" href=""><i class="fa fa-linkedin"></i></a></li>
+										<li><a id="instagram" href=""><i class="fa fa-instagram"></i></a></li>
 									</ul>
 								</div>
 							</div>
@@ -377,7 +398,7 @@
         	</div>
         </section>
         <!--================End My Tabs Area =================-->
-        
+
         <!--================Feature Area =================-->
         <section class="feature_area p_120">
         	<div class="container">
@@ -413,7 +434,7 @@
         <!--================End Feature Area =================-->
         
         <!--================Home Gallery Area =================-->
-        <section class="home_gallery_area p_120">
+        <section id="gallery" class="home_gallery_area p_120">
         	<div class="container">
         		<div class="main_title">
         			<h2>What I've Been Up To</h2>
@@ -426,10 +447,9 @@
 						<li data-filter=".project"><a href="#projects">Projects</a></li>
 						<li data-filter=".patent"><a href="#patents">Patents</a></li>
 						<li data-filter=".running"><a href="#running">Running</a></li>
-						<!--<li data-filter=".contests"><a href="#">Contests</a></li>
-						<li data-filter=".toastmasters"><a href="#">Toastmasters</a></li>
+						<li data-filter=".contests"><a href="#">Contests</a></li>
 						<li data-filter=".hackathon"><a href="#">Hackathon</a></li>
-						<li data-filter=".patents"><a href="#">Patents</a></li>-->
+						<!--<li data-filter=".toastmasters"><a href="#">Toastmasters</a></li>-->
 					</ul>
         		</div>
         	</div>
@@ -705,56 +725,249 @@
         					</div>
         				</div>
         			</div>
-        			<!--<div class="col-lg-4 col-md-4 col-sm-6 manipul creative design print">
+					<div class="col-lg-4 col-md-4 col-sm-6 contests">
         				<div class="h_gallery_item">
         					<div class="g_img_item">
-        						<img class="img-fluid" src="img/gallery/project-3.jpg" alt="">
-        						<a class="light" href="img/gallery/project-3.jpg"><img src="img/gallery/icon.png" alt=""></a>
+        						<img class="img-fluid" src="img/trophy/trophy1Small.jpg" alt="">
+        						<a class="light" href="img/trophy/trophy1Large.jpg"><img src="img/gallery/icon.png" alt=""></a>
         					</div>
         					<div class="g_item_text">
-        						<h4>Creative Poster Design</h4>
-        						<p>Client Project</p>
+        						<h4>2014 Area 62 Humorous Speech 1st Place</h4>
+        						<p>Internship at the White House</p>
+								<!--<a href="contest1.html">Read more<i class="fa fa-star"></i></a>-->
         					</div>
         				</div>
         			</div>
-        			<div class="col-lg-4 col-md-4 col-sm-6 brand creative print">
-        				<div class="h_gallery_item">
-        					<div class="g_img_item">
-        						<img class="img-fluid" src="img/gallery/project-4.jpg" alt="">
-        						<a class="light" href="img/gallery/project-4.jpg"><img src="img/gallery/icon.png" alt=""></a>
-        					</div>
-        					<div class="g_item_text">
-        						<h4>Embosed Logo Design</h4>
-        						<p>Client Project</p>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-4 col-sm-6 brand manipul design">
-        				<div class="h_gallery_item">
-        					<div class="g_img_item">
-        						<img class="img-fluid" src="img/gallery/project-5.jpg" alt="">
-        						<a class="light" href="img/gallery/project-5.jpg"><img src="img/gallery/icon.png" alt=""></a>
-        					</div>
-        					<div class="g_item_text">
-        						<h4>3D Disposable Bottle</h4>
-        						<p>Client Project</p>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-4 col-sm-6 brand creative">
+					<div class="col-lg-4 col-md-4 col-sm-6 contests">
         				<div class="h_gallery_item">
         					<div class="g_img_item">
         						<img class="img-fluid" src="img/gallery/project-6.jpg" alt="">
         						<a class="light" href="img/gallery/project-6.jpg"><img src="img/gallery/icon.png" alt=""></a>
         					</div>
         					<div class="g_item_text">
-        						<h4>3D Logo Design</h4>
-        						<p>Client Project</p>
+        						<h4>2014 Division F Humorous Speech</h4>
+        						<p>Internship at the White House</p>
+								<a href="contest2.html">Read more<i class="fa fa-star"></i></a>
         					</div>
         				</div>
         			</div>
-        		</div>
-        		<div class="more_btn">
+        			<div class="col-lg-4 col-md-4 col-sm-6 contests">
+        				<div class="h_gallery_item">
+        					<div class="g_img_item">
+        						<img class="img-fluid" src="img/trophy/trophy2Small.jpg" alt="">
+        						<a class="light" href="img/trophy/trophy2Large.jpg"><img src="img/gallery/icon.png" alt=""></a>
+        					</div>
+        					<div class="g_item_text">
+        						<h4>2015 Area 62 Tall Tales 1st Place</h4>
+        						<p>How I Met My Wife</p>
+								<!--<a href="contest3.html">Read more<i class="fa fa-star"></i></a>-->
+        					</div>
+        				</div>
+        			</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 contests">
+        				<div class="h_gallery_item">
+        					<div class="g_img_item">
+        						<img class="img-fluid" src="img/trophy/trophy3Small.jpg" alt="">
+        						<a class="light" href="img/trophy/trophy3Large.jpg"><img src="img/gallery/icon.png" alt=""></a>
+        					</div>
+        					<div class="g_item_text">
+        						<h4>2015 Divison F Tall Tales 2nd Place</h4>
+        						<p>How I Met My Wife</p>
+								<a href="contest4.html">Read more<i class="fa fa-star"></i></a>
+        					</div>
+        				</div>
+        			</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 contests">
+        				<div class="h_gallery_item">
+        					<div class="g_img_item">
+        						<img class="img-fluid" src="img/trophy/trophy4Small.jpg" alt="">
+        						<a class="light" href="img/trophy/trophy4Large.jpg"><img src="img/gallery/icon.png" alt=""></a>
+        					</div>
+        					<div class="g_item_text">
+        						<h4>2016 Area 62 Humorous Speech 1st Place</h4>
+        						<p>The Greatest Father in the World</p>
+								<!--<a href="contest5.html">Read more<i class="fa fa-star"></i></a>-->
+        					</div>
+        				</div>
+        			</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 contests">
+        				<div class="h_gallery_item">
+        					<div class="g_img_item">
+        						<img class="img-fluid" src="img/trophy/trophy5Small.jpg" alt="">
+        						<a class="light" href="img/trophy/trophy5Large.jpg"><img src="img/gallery/icon.png" alt=""></a>
+        					</div>
+        					<div class="g_item_text">
+        						<h4>2016 Division F Humorous Speech 1st Place</h4>
+        						<p>The Greatest Father in the World</p>
+								<!--<a href="contest6.html">Read more<i class="fa fa-star"></i></a>-->
+        					</div>
+        				</div>
+        			</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 contests">
+        				<div class="h_gallery_item">
+        					<div class="g_img_item">
+        						<img class="img-fluid" src="img/gallery/project-6.jpg" alt="">
+        						<a class="light" href="img/gallery/project-6.jpg"><img src="img/gallery/icon.png" alt=""></a>
+        					</div>
+        					<div class="g_item_text">
+        						<h4>2016 District Humorous Speech</h4>
+        						<p>The Greatest Father in the World</p>
+								<a href="contest7.html">Read more<i class="fa fa-star"></i></a>
+        					</div>
+        				</div>
+        			</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 contests">
+        				<div class="h_gallery_item">
+        					<div class="g_img_item">
+        						<img class="img-fluid" src="img/trophy/trophy6Small.jpg" alt="">
+        						<a class="light" href="img/trophy/trophy6Large.jpg"><img src="img/gallery/icon.png" alt=""></a>
+        					</div>
+        					<div class="g_item_text">
+        						<h4>2018 Area 61 & 62 Humorous Speech</h4>
+        						<p>I am P-P-Paul</p>
+								<a href="contest8.html">Read more<i class="fa fa-star"></i></a>
+        					</div>
+        				</div>
+        			</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 contests">
+        				<div class="h_gallery_item">
+        					<div class="g_img_item">
+        						<img class="img-fluid" src="img/gallery/project-6.jpg" alt="">
+        						<a class="light" href="img/gallery/project-6.jpg"><img src="img/gallery/icon.png" alt=""></a>
+        					</div>
+        					<div class="g_item_text">
+        						<h4>2018 District F Humorous Speech</h4>
+        						<p>I am P-P-Paul</p>
+								<a href="contest14.html">Read more<i class="fa fa-star"></i></a>
+        					</div>
+        				</div>
+        			</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 contests">
+        				<div class="h_gallery_item">
+        					<div class="g_img_item">
+        						<img class="img-fluid" src="img/trophy/trophy7Small.jpg" alt="">
+        						<a class="light" href="img/trophy/trophy7Large.jpg"><img src="img/gallery/icon.png" alt=""></a>
+        					</div>
+        					<div class="g_item_text">
+        						<h4>2019 Area 62 Evaluation 1st Place</h4>
+        						<p>TBD</p>
+								<!--<a href="contest9.html">Read more<i class="fa fa-star"></i></a>-->
+        					</div>
+        				</div>
+        			</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 contests">
+        				<div class="h_gallery_item">
+        					<div class="g_img_item">
+        						<img class="img-fluid" src="img/trophy/trophy8Small.jpg" alt="">
+        						<a class="light" href="img/trophy/trophy8Large.jpg"><img src="img/gallery/icon.png" alt=""></a>
+        					</div>
+        					<div class="g_item_text">
+        						<h4>2019 Division F Evaluation 1st Place</h4>
+        						<p>TBD</p>
+								<!--<a href="contest10.html">Read more<i class="fa fa-star"></i></a>-->
+        					</div>
+        				</div>
+        			</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 contests">
+        				<div class="h_gallery_item">
+        					<div class="g_img_item">
+        						<img class="img-fluid" src="img/trophy/trophy9Small.jpg" alt="">
+        						<a class="light" href="img/trophy/trophy9Large.jpg"><img src="img/gallery/icon.png" alt=""></a>
+        					</div>
+        					<div class="g_item_text">
+        						<h4>2019 Area 62 Tall Tales 1st Place</h4>
+        						<p>Improvise and Don't Apologize</p>
+								<!--<a href="contest11.html">Read more<i class="fa fa-star"></i></a>-->
+        					</div>
+        				</div>
+        			</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 contests">
+        				<div class="h_gallery_item">
+        					<div class="g_img_item">
+        						<img class="img-fluid" src="img/trophy/trophy10Small.jpg" alt="">
+        						<a class="light" href="img/trophy/trophy10Large.jpg"><img src="img/gallery/icon.png" alt=""></a>
+        					</div>
+        					<div class="g_item_text">
+        						<h4>2019 Division F Tall Tales 1st Place</h4>
+        						<p>Improvise and Don't Apologize</p>
+								<!--<a href="contest12.html">Read more<i class="fa fa-star"></i></a>-->
+        					</div>
+        				</div>
+        			</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 contests">
+        				<div class="h_gallery_item">
+        					<div class="g_img_item">
+        						<img class="img-fluid" src="img/trophy/trophy11Small.jpg" alt="">
+        						<a class="light" href="img/trophy/trophy11Large.jpg"><img src="img/gallery/icon.png" alt=""></a>
+        					</div>
+        					<div class="g_item_text">
+        						<h4>2019 District 83 Evaluation 1st Place</h4>
+        						<p>TBD</p>
+								<!--<a href="contest13.html">Read more<i class="fa fa-star"></i></a>-->
+        					</div>
+        				</div>
+        			</div>
+        			<div class="col-lg-4 col-md-4 col-sm-6 hackathon">
+        				<div class="h_gallery_item">
+        					<div class="g_img_item">
+        						<img class="img-fluid" src="img/gallery/project-4.jpg" alt="">
+        						<a class="light" href="img/gallery/project-4.jpg"><img src="img/gallery/icon.png" alt=""></a>
+        					</div>
+        					<div class="g_item_text">
+        						<h4>It Can't Wait</h4>
+        						<p>2019</p>
+        					</div>
+        				</div>
+        			</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 hackathon">
+        				<div class="h_gallery_item">
+        					<div class="g_img_item">
+        						<img class="img-fluid" src="img/gallery/project-4.jpg" alt="">
+        						<a class="light" href="img/gallery/project-4.jpg"><img src="img/gallery/icon.png" alt=""></a>
+        					</div>
+        					<div class="g_item_text">
+        						<h4>Fraud Finder</h4>
+        						<p>2018</p>
+        					</div>
+        				</div>
+        			</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 hackathon">
+        				<div class="h_gallery_item">
+        					<div class="g_img_item">
+        						<img class="img-fluid" src="img/gallery/project-4.jpg" alt="">
+        						<a class="light" href="img/gallery/project-4.jpg"><img src="img/gallery/icon.png" alt=""></a>
+        					</div>
+        					<div class="g_item_text">
+        						<h4>Polished Speaker</h4>
+        						<p>2017</p>
+        					</div>
+        				</div>
+        			</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 hackathon">
+        				<div class="h_gallery_item">
+        					<div class="g_img_item">
+        						<img class="img-fluid" src="img/gallery/project-4.jpg" alt="">
+        						<a class="light" href="img/gallery/project-4.jpg"><img src="img/gallery/icon.png" alt=""></a>
+        					</div>
+        					<div class="g_item_text">
+        						<h4>TBD</h4>
+        						<p>2016</p>
+        					</div>
+        				</div>
+        			</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 hackathon">
+        				<div class="h_gallery_item">
+        					<div class="g_img_item">
+        						<img class="img-fluid" src="img/gallery/project-4.jpg" alt="">
+        						<a class="light" href="img/gallery/project-4.jpg"><img src="img/gallery/icon.png" alt=""></a>
+        					</div>
+        					<div class="g_item_text">
+        						<h4>SMS Stalker</h4>
+        						<p>2015</p>
+        					</div>
+        				</div>
+        			</div>
+        		<!--<div class="more_btn">
         			<a class="main_btn" href="#">Load More Items</a>
         		</div>-->
         	</div>
@@ -785,6 +998,7 @@
 							<div class="testi_item">
 								<p>Paul is a dedicated individual who strived to do the best work possible on any task given to him. In the time I was his manager, he worked relentlessly to complete projects on time, and always took constructive feedback in a very positive manner. He has shown a very high potential, and I expect him to grow into an outstanding engineer. It is for these reasons among others that I recommend Paul for employment for a position he qualifies for.</p>
 								<h4>James Autry (AMD)</h4>
+								
 								<a href="#"><i class="fa fa-star"></i></a>
 								<a href="#"><i class="fa fa-star"></i></a>
 								<a href="#"><i class="fa fa-star"></i></a>
@@ -796,6 +1010,17 @@
 							<div class="testi_item">
 								<p>... Paul showed great understanding and innovation. Paul was one of the best students in this course. He showed great enthusiasm and eagerness to learn. Paul's [apparatus] was one of the best projects for that year. Paul was always participating in class and team discussions and his responses reflected his thorough understanding of the material presented. Paul also possesses good communications skills, which helped him during the team's presentations. I strongly recommend Mr. Ireifej ... and am confident of his abilities.</p>
 								<h4>Mohamed Aboul-Seoud, Ph.D. (RPI)</h4>
+								<a href="#"><i class="fa fa-star"></i></a>
+								<a href="#"><i class="fa fa-star"></i></a>
+								<a href="#"><i class="fa fa-star"></i></a>
+								<a href="#"><i class="fa fa-star"></i></a>
+								<a href="#"><i class="fa fa-star-half-o"></i></a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="testi_item">
+								<p>I have known Paul since Fall 2004, when I was assigned to serve as his academic advisor. [Paul] is keen on long-term planning, and talked to me about graduate school while still a freshmen. He is a likeable young man who has his act together. He is dependable, punctual, and courteous. He is serious about his studies. He has had exceptionally broad internship experience ... I attended a fine presentation he made to the research team on the [wafer bonding for stackable VLSI] procedure ... and read his detailed final report. Paul also volunteered for several activities and organizations that reflect his social concerns. He ... has a knack for programming ... is certainly familiar with a large variety of software.</p>
+								<h4>George Nagy, Ph.D. (RPI)</h4>
 								<a href="#"><i class="fa fa-star"></i></a>
 								<a href="#"><i class="fa fa-star"></i></a>
 								<a href="#"><i class="fa fa-star"></i></a>
@@ -846,10 +1071,10 @@
         					</div>
         					<p>Let us be social</p>
         					<ul class="list">
-        						<li><a href="https://m.facebook.com/profile.php?id=17501182&ref=content_filter"><i class="fa fa-facebook"></i></a></li>
-        						<li><a href="https://mobile.twitter.com/paulireifej"><i class="fa fa-twitter"></i></a></li>
-        						<li><a href="https://linkedin.com/in/paul-ireifej-572829b"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="https://www.instagram.com/ipaullllllll/"><i class="fa fa-instagram"></i></a></li>
+        						<li><a id="facebook" href=""><i class="fa fa-facebook"></i></a></li>
+        						<li><a id="twitter" href=""><i class="fa fa-twitter"></i></a></li>
+        						<li><a id="linkedin" href=""><i class="fa fa-linkedin"></i></a></li>
+								<li><a id="instagram" href=""><i class="fa fa-instagram"></i></a></li>
         					</ul>
         				</aside>
         			</div>
@@ -875,5 +1100,6 @@
         <script src="vendors/counter-up/jquery.counterup.min.js"></script>
         <script src="js/mail-script.js"></script>
         <script src="js/theme.js"></script>
+		<script src="js/name.js"></script>
     </body>
 </html>

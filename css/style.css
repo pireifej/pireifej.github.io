@@ -3403,6 +3403,19 @@ h6 {
   opacity: 0;
   transition: all 300ms ease;
 }
+.h_gallery_item_narrow .g_img_item_narrow:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  background-image: -moz-linear-gradient(0deg, #766dff 0%, #88f3ff 100%);
+  background-image: -webkit-linear-gradient(0deg, #766dff 0%, #88f3ff 100%);
+  background-image: -ms-linear-gradient(0deg, #766dff 0%, #88f3ff 100%);
+  position: absolute;
+  opacity: 0;
+  transition: all 300ms ease;
+}
 .h_gallery_item .g_img_item .light {
   position: absolute;
   left: 0px;

@@ -1,7 +1,6 @@
 ;(function($){
     "use strict"
-	
-	
+		
 	var nav_offset_top = $('header').height() + 50; 
 	var my_document = document;
     /*-------------------------------------------------------------------------------
@@ -130,10 +129,53 @@
         });
     });
 	
+	function selectGallery(gallery) {
+		$(".gallery_filter li").each(function() {
+			if ($(this).data("filter") == gallery) {
+				$(this).trigger("click");
+			}
+		});
+	}
+	
+	$("#projects-menu-link").on('click',function(){
+		document.cookie = "filter=.project";
+		selectGallery(".project");
+		window.location = "index.html#gallery";
+	});
+	
+	$("#patents-menu-link").on('click',function(){
+		document.cookie = "filter=.patent";
+		selectGallery(".patent");
+		window.location = "index.html#gallery";
+	});
+	
+	$("#contests-menu-link").on('click',function(){
+		document.cookie = "filter=.contests";
+		selectGallery(".contests");
+		window.location = "index.html#gallery";
+	});
+	
+	$("#hackathon-menu-link").on('click',function(){
+		document.cookie = "filter=.hackathon";
+		selectGallery(".hackathon");
+		window.location = "index.html#gallery";
+	});
+	
+	$("#cfca-menu-link").on('click',function(){
+		document.cookie = "filter=.cfca";
+		selectGallery(".cfca");
+		window.location = "index.html#gallery";
+	});
+	
 	/*----------------------------------------------------*/
     /*  Isotope Fillter js
     /*----------------------------------------------------*/
 	function gallery_isotope(){
+		$("[id=twitter]").attr("href", "https://mobile.twitter.com/paulireifej");
+		$("[id=linkedin]").attr("href", "https://linkedin.com/in/paul-ireifej-572829b");
+		$("[id=instagram]").attr("href", "https://www.instagram.com/ipaullllllll/");
+		$("[id=github]").attr("href", "https://github.com/pireifej");
+
         if ( $('.gallery_f_inner').length ){
             // Activate isotope in container
 			$(".gallery_f_inner").imagesLoaded( function() {
@@ -170,7 +212,6 @@
 			var filter = "";
 			for (var i = 0; i < filterCookies.length; i++) {
 				var cookieValue = filterCookies[i].split("=");
-				console.log(cookieValue.length);
 				if (!cookieValue[0]) return;
 				var key = cookieValue[0].trim();
 				var value = cookieValue[1].trim();
@@ -178,12 +219,8 @@
 					filter = value;
 				}
 			}
-				
-			$(".gallery_filter li").each(function() {
-				if ($(this).data("filter") == filter) {
-					$(this).trigger("click");
-				}
-			});
+
+			selectGallery(filter);
         }
     }
     gallery_isotope();
@@ -215,17 +252,77 @@
     }
     testimonials_slider();
 	
+	var names = {
+		"--1--" : { name: "Dori Zarr", gender: "female" },
+		"--2--" : { name: "David Romanchick", gender: "male" },
+		"--3--" : { name: "Steve Z", gender: "male" },
+		"--4--" : { name: "Frank", gender: "male" },
+		"--5--" : { name: "Alexander", gender: "male" },
+		"--6--" : { name: "Cathie Ruiterman", gender: "female" },
+		"--7--" : { name: "Ally Bhuiyan", gender: "female" },
+		"--8--" : { name: "Majorie Nazire", gender: "female" },
+		"--9--" : { name: "Jenny Scott", gender: "female" },
+		"--10--" : { name: "Michael Gilmore", gender: "male" },
+		"--11--" : { name: "Chie Tamaki", gender: "female" },
+		"--12--" : { name: "Donald Chong", gender: "male" },
+		"--13--" : { name: "Jim Scanlon", gender: "male" },
+		"--14--" : { name: "Ed", gender: "male"},
+		"--15--" : { name: "Swathi Krishnananda", gender: "female"},
+		"--16--" : { name: "Kevin McDonald", gender: "male"},
+		"--17--" : { name: "Brittany Lamb", gender: "female"},
+		"--18--" : { name: "Rich Gomulka", gender: "male"},
+		"--19--" : { name: "Elizabeth", gender: "female"},
+		"--20--" : { name: "Don Matts", gender: "male"},
+		"--21--" : { name: "Andrew Edwards", gender: "male"},
+		"--22--" : { name: "Eileen Kern", gender: "female"},
+		"--23--" : { name: "Michael Barris", gender: "male"},
+		"--24--" : { name: "Eric Warsaw", gender: "male"},
+		"--25--" : { name: "Shelby Holliman", gender: "female"},
+		"--26--" : { name: "Kasi Subramanian", gender: "male"},
+		"--27--" : { name: "Su Brooks", gender: "female"},
+		"--28--" : { name: "Aida Murphy", gender: "female"},
+		"--29--" : { name: "Anne Gilson", gender: "female"},
+		"--30--" : { name: "Saikat Maitra", gender: "female"},
+		"--31--" : { name: "Michael Barris", gender: "male"},
+		"--32--" : { name: "Jane Costagiola", gender: "female"},
+		"--33--" : { name: "Jay Mussan-Levy", gender: "male"}
+	};
+	
+	function setFakeName(index) {
+		// type: 'female', 'male', 'surname'
+		return namey.get({ count: 1, type: names[index].gender, with_surname: names[index].name.split(" ").length == 2, callback: function(n) {
+			names[index]["fakeName"] = n[0];
+			replaceText("p", index);
+			replaceText("li", index);
+			replaceText("h2", index);
+		}});
+	}
+
+	function replaceText(el, key) {
+		var element = $(el);
+		element.each(function(i,current){
+			var text = $(current).text();
+			var re = new RegExp(key, "g");
+			if ($(current).text().includes(key)) {
+			$(current).text($(current).text().replace(re, names[key].fakeName));
+			}
+		});
+	}
+	
 	$(document).ready(function() {
+		for (var key in names) {
+			setFakeName(key);
+		}
+
 		$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
 			disableOn: 700,
 			type: 'iframe',
 			mainClass: 'mfp-fade',
 			removalDelay: 160,
 			preloader: false,
-
 			fixedContentPos: false
 		});
-	}); 
+	});
 	
 	/*----------------------------------------------------*/
     /*  Google map js
@@ -437,6 +534,4 @@
             ]
         });
     }
-	
-
 })(jQuery)
