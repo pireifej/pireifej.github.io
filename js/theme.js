@@ -257,7 +257,7 @@
 		"--2--" : { name: "David Romanchick", gender: "male" },
 		"--3--" : { name: "Steve Z", gender: "male" },
 		"--4--" : { name: "Frank", gender: "male" },
-		"--5--" : { name: "Alexander", gender: "male" },
+		"--5--" : { name: "Alexander Matos", gender: "male" },
 		"--6--" : { name: "Cathie Ruiterman", gender: "female" },
 		"--7--" : { name: "Ally Bhuiyan", gender: "female" },
 		"--8--" : { name: "Majorie Nazire", gender: "female" },
@@ -266,7 +266,7 @@
 		"--11--" : { name: "Chie Tamaki", gender: "female" },
 		"--12--" : { name: "Donald Chong", gender: "male" },
 		"--13--" : { name: "Jim Scanlon", gender: "male" },
-		"--14--" : { name: "Ed", gender: "male"},
+		"--14--" : { name: "Ed Scarano", gender: "male"},
 		"--15--" : { name: "Swathi Krishnananda", gender: "female"},
 		"--16--" : { name: "Kevin McDonald", gender: "male"},
 		"--17--" : { name: "Brittany Lamb", gender: "female"},
@@ -285,17 +285,41 @@
 		"--30--" : { name: "Saikat Maitra", gender: "female"},
 		"--31--" : { name: "Michael Barris", gender: "male"},
 		"--32--" : { name: "Jane Costagiola", gender: "female"},
-		"--33--" : { name: "Jay Mussan-Levy", gender: "male"}
+		"--33--" : { name: "Jay Mussan-Levy", gender: "male"},
+		"--34--" : { name: "Swathi", gender: "female"},
+		"--35--" : { name: "Krishnananda", gender: "female"},
+		"--36--" : { name: "Dat Le", gender: "male"},
+		"--37--" : { name: "Dave Telfeyan", gender: "male"},
+		"--38--" : { name: "Rebecca Marzec-Young", gender: "female"},
+		"--39--" : { name: "Amrita Ghosh", gender: "male"},
+		"--40--" : { name: "Shawn Mandar", gender: "male"},
+		"--41--" : { name: "John Connors", gender: "male"},
+		"--42--" : { name: "Manali Patel", gender: "female"},
+		"--43--" : { name: "Harshika Nahar", gender: "female"},
+		"--44--" : { name: "Tom Somers", gender: "male"},
+		"--45--" : { name: "Peggy Seymore", gender: "female"},
+		"--46--" : { name: "Ashley Rifkin", gender: "female"},
+		"--47--" : { name: "Wendy Huang", gender: "female"},
+		"--48--" : { name: "Maryann", gender: "female"}
 	};
 	
 	function setFakeName(index) {
-		// type: 'female', 'male', 'surname'
-		return namey.get({ count: 1, type: names[index].gender, with_surname: names[index].name.split(" ").length == 2, callback: function(n) {
-			names[index]["fakeName"] = n[0];
-			replaceText("p", index);
-			replaceText("li", index);
-			replaceText("h2", index);
-		}});
+		console.log(names[index]);
+		if (names[index]["fakeName"]) return;
+		$.ajax({
+			url: "https://randomuser.me/api/?nat=US&gender=" + names[index].gender,
+			dataType: 'json',
+			success: function(data) {
+				console.log(index, data.results[0].name);
+				if (names[index].name.split(" ").length == 2)
+					names[index]["fakeName"] = data.results[0].name.first + " " + data.results[0].name.last;
+				else
+					names[index]["fakeName"] = data.results[0].name.first;
+				replaceText("p", index);
+				replaceText("li", index);
+				replaceText("h2", index);
+			}
+		});
 	}
 
 	function replaceText(el, key) {
@@ -309,10 +333,24 @@
 		});
 	}
 	
+	function fakeNameDoIt(el) {
+		var element = $(el);
+		element.each(function(i,current){
+			var text = $(current).text();
+			var re = new RegExp("--[0-9]+--", "g");
+			var indices = text.match(re);
+			if (indices) {
+				for (var j = 0; j < indices.length; j++) {
+					setFakeName(indices[j]);
+				}
+			}
+		});
+	}
+	
 	$(document).ready(function() {
-		for (var key in names) {
-			setFakeName(key);
-		}
+		fakeNameDoIt("p");
+		fakeNameDoIt("li");
+		fakeNameDoIt("h2");
 
 		$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
 			disableOn: 700,
