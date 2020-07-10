@@ -175,6 +175,7 @@
 		$("[id=linkedin]").attr("href", "https://linkedin.com/in/paul-ireifej-572829b");
 		$("[id=instagram]").attr("href", "https://www.instagram.com/ipaullllllll/");
 		$("[id=github]").attr("href", "https://github.com/pireifej");
+		$("[id=facebook]").attr("href", "https://www.facebook.com/paul.ireifej");
 
         if ( $('.gallery_f_inner').length ){
             // Activate isotope in container
@@ -300,7 +301,21 @@
 		"--45--" : { name: "Peggy Seymore", gender: "female"},
 		"--46--" : { name: "Ashley Rifkin", gender: "female"},
 		"--47--" : { name: "Wendy Huang", gender: "female"},
-		"--48--" : { name: "Maryann", gender: "female"}
+		"--48--" : { name: "Maryann", gender: "female"},
+		"--49--" : { name: "Nagz", gender: "male"},
+		"--50--" : { name: "Donna Walters", gender: "female"},
+		"--51--" : { name: "Sumanjit Paul", gender: "female"},
+		"--52--" : { name: "Sami ", gender: "male"},
+		"--53--" : { name: "Kimberly Chung", gender: "female"},
+		"--54--" : { name: "Frank Schuck", gender: "male"},
+		"--55--" : { name: "Andrew Goelz", gender: "male"},
+		"--56--" : { name: "Victor Martins", gender: "male"},
+		"--57--" : { name: "Thomas Kenny", gender: "male"},
+		"--58--" : { name: "Manny", gender: "male"},
+		"--59--" : { name: "John Steinhilber", gender: "male" },
+		"--60--" : { name: "Rafael", gender: "male" },
+		"--61--" : { name: "Lynda Starr", gender: "female" },
+		"--62--" : { name: "Sonny Uppal", gender: "male" }
 	};
 	
 	function setFakeName(index) {
@@ -318,7 +333,7 @@
 				replaceText("p", index);
 				replaceText("li", index);
 				replaceText("h2", index);
-			}
+				replaceText("h1", index);			}
 		});
 	}
 
@@ -351,6 +366,7 @@
 		fakeNameDoIt("p");
 		fakeNameDoIt("li");
 		fakeNameDoIt("h2");
+		fakeNameDoIt("h1");
 
 		$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
 			disableOn: 700,
